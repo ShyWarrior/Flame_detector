@@ -12,6 +12,8 @@ void setup()
   pinMode(buzzer, OUTPUT);
   pinMode(LED, OUTPUT);
   pinMode(flame_sensor, INPUT);
+  lcd.begin(16, 2);
+  lcd.print("Flame detected...! take action immediately.");
 }
 
 void loop()
@@ -19,21 +21,21 @@ void loop()
   flame_detected = digitalRead(flame_sensor);
   if (flame_detected == 1)
   {
-     lcd.begin(16, 2);
-     lcd.print("Flame detected...! take action immediately.");
-      delay(200);
-     
+      lcd.display();
+     delay(500);
     digitalWrite(buzzer, HIGH);
     digitalWrite(LED, HIGH);
     delay(200);
     digitalWrite(LED, LOW);
     delay(200);
   }
+     
+     
+   
   else
   {
-     lcd.begin(16, 2);
-     lcd.print("No flame detected. stay cool.");
-      delay(200);
+     lcd.noDisplay();
+     delay(500);
     digitalWrite(buzzer, LOW);
     digitalWrite(LED, LOW);
   }
