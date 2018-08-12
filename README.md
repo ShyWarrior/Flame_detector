@@ -4,7 +4,11 @@ Aurdino fire alarm or fire detector using Flame sensor and Arduino board, the se
 Following components are required for project designing:
 
 -Aurdino-Uno Board
+
 -Flame-Sensor
+
 -LED
+
 -Buzzer
+
 -Breadboard
