@@ -19,8 +19,9 @@ void loop()
   flame_detected = digitalRead(flame_sensor);
   if (flame_detected == 1)
   {
-     
-    Serial.println("Flame detected...! take action immediately.");
+     lcd.begin(16, 2);
+     lcd.print("Flame detected...! take action immediately.");
+      delay(200);
      
     digitalWrite(buzzer, HIGH);
     digitalWrite(LED, HIGH);
@@ -30,7 +31,9 @@ void loop()
   }
   else
   {
-    Serial.println("No flame detected. stay cool");
+     lcd.begin(16, 2);
+     lcd.print("No flame detected. stay cool.");
+      delay(200);
     digitalWrite(buzzer, LOW);
     digitalWrite(LED, LOW);
   }
